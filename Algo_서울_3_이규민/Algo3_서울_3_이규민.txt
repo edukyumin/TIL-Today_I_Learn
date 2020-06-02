@@ -1,0 +1,25 @@
+RESULT -> xx1110x1x100011xxx11000111x1x00111010
+
+CODE
+
+def func(x, y, n):  #x: x-index, y: y-index, n:크기
+  gloal arr # 읽어온 arr 설정
+  result = '' #빈 답안칸 생성
+  color = arr[y][x] #첫 색깔과 나머지 색이 같아야함
+    
+  for i in range(x, x+n):   #i는 x부터 1씩 x+n-1까지        
+    for j in range(y, y+n):
+        if arr[j][i] != color: #색깔다르면 재귀문 진행
+            result += 'x' #등분
+            func(x, y, n//2) #왼쪽위1/4
+            func(x + n//2, y, n//2) #오른쪽위1/4
+            func(x, y + n//2, n//2) #왼쪽아래1/4
+            func(x + n//2, y + n//2, n//2) #오른쪽아래1/4
+   
+         else: #모두 검정 or 흰색이라면
+            if arr[y][x] == 0: #검정색
+                result += '0'
+            else:
+                result += '1' #흰색
+blacknwhite(0,0,n)
+print(result)

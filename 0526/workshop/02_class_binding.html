@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+
+
+        <!-- 1. 객체 구문 -->
+        <div class="static" c-bind:class="{ active: isActive, 'text-daanger': hasError }">
+            {{ message }}
+        </div>
+
+        <!-- 2. 배열 구문 -->
+        <div v-bind:class="[activeClass, errorClass]">
+            {{ message }}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data:{
+                isActive: true,
+                hasError: false,
+                activeClass: 'active',
+                errorClass: 'text-danger',
+                message:'harry'
+            }
+        })
+    </script>
+</body>
+</html>

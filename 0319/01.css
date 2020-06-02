@@ -1,0 +1,52 @@
+/* box-model.css */
+.big-box {
+  position: relative;
+  margin: 100px auto 500px;
+  border: 5px solid black;
+  width: 500px;
+  height: 500px;
+}
+
+.small-box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+/* position으로만 배치를 해봅니다. */
+
+#red {
+  background-color: red;
+  margin-top: 400px;
+  margin-left: 400px;
+
+  /* 큰 사각형 내부의 우측 하단 모서리에 빨간 사각형 위치시키기 */
+}
+
+#gold {
+  background-color: gold;
+  margin-top: 700px;
+  margin-left: 700px;
+  /* 브라우저의 하단에서 50px, 우측에서 50px 위치에 고정하기 */
+}
+
+#green {
+  background-color: green;
+  margin-top: 200px;
+  margin-left: 200px;
+  /* absolute 이용해서 큰 사각형의 가운데 위치시키기 */
+}
+
+#blue {
+  position: absolute;
+  margin-top: 100px;
+  background-color: blue;
+  margin-left: 100px;
+  /* relative를 사용해서 큰 사각형 좌측 상단 모서리에서 100px, 100px 띄우기 */
+}
+
+#pink {
+  margin : 0;
+  background-color: pink;
+  /* 큰 사각형 내부의 좌측 상단 모서리로 옮기기*/
+}

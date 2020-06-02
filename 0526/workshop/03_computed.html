@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>원본 메시지: "{{ message }}"</p>
+        <p>역순으로 표현된 메시지: "{{ reversedMessage }}"</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello, vue!'
+            },
+            // computed 속성은 종속 대상을 따라 저장(캐싱)된다는 것
+            // 해당 속성이 종속된 대상(message)이 변경될 때만 함수를 실행
+            // 즉 종속된 대상이 변하지 않ㄴ는 한, computed 속성을 여러번 요청해도 계산을 다시 하지 않고 계산되어 있던 결과를 즉시 반환.
+            // 만약 아무 곳에도 의존하지 않는 computed 속성의 경우 절대로 업데이트 되지 않는다.
+            computed: {
+                reversedMessage: function () {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

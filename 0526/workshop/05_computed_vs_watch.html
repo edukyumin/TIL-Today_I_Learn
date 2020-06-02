@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>count: {{ count }}</h1>
+        <h1>computed: {{ calculated }}</h1>
+        <button v-on:click="decreaseCount">버튼</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                count: 3
+            },
+            methods: {
+                decreaseCount: function () {
+                    this.count = this.count - 1
+                }
+            },
+            computed: {
+                calculated: function () {
+                    return this.count * 3
+                }
+            },
+            watch: {
+                calculated: function () {
+                    return this.count
+                }
+            },
+            watch: {
+                // data의 count가 변경될 때 마다 해당 함수가 실행
+                // 이때, 새로 변경된 count값이 함수의 인자로 전달 
+                count: function (newArgs) {
+                    if (newArgs == 0) {
+                        alert('count 값이 0이 되었습니다.')
+                        this.count = 3
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

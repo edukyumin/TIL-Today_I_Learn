@@ -1,0 +1,35 @@
+.top{
+    padding:1rem;;
+    background-color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.first{
+    text-decoration: none;
+    color: black;
+}
+.items{
+    float:right;
+    margin:0;
+}
+
+.item{
+    list-style: none;
+    display: inline
+}
+
+.bike{
+    height:500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/bicycles.jpg');
+    text-align: center;
+}
+
+.contents{
+    text-align: center;
+}
+
+.contents > img{
+    width:500px
+}
